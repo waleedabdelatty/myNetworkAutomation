@@ -1,0 +1,37 @@
+---
+- name: Show ver & run playbook
+  hosts: lan
+  vars_files: "./group_vars/network.yml"
+  tasks:
+    - name: running command show ver & show run
+      ios_command:
+        commands:
+          - show running-config 
+          - show version 
+      register: switches_ver_config
+
+    - name: save config to file
+      copy:
+        content: |
+          {% for host in groups.lan %}
+          === {{ host }} ==
+        
+          "{{ switches_ver_config.stdout[0] }}"
+
+          {% endfor %}
+        
+        dest: "showrun.json.txt"
+
+    - name: save versions to file
+      copy:
+        content: |
+          {% for host in groups.lan %}
+          === {{ host }} ==
+        
+          "{{ switches_ver_config.stdout[1] }}"
+
+          {% endfor %}
+        
+        dest: "showver.json.txt"
+
+...

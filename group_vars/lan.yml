@@ -1,0 +1,106 @@
+interfaces:
+  access01:
+    - name: GigabitEthernet0/0
+      description: to control node
+      mode: access
+    - name: GigabitEthernet0/1
+      description: to core01
+      mode: trunk
+    - name: GigabitEthernet0/2
+      description: to core02
+      mode: 
+    - name: GigabitEthernet0/3
+      description: 
+      mode: 
+    - name: GigabitEthernet1/0
+      description: 
+      mode: 
+    - name: GigabitEthernet1/1
+      description: 
+      mode: 
+    - name: GigabitEthernet1/2
+      description: 
+      mode: trunk
+    - name: GigabitEthernet1/3
+      description: 
+      mode: 
+
+  access02:
+    - name: GigabitEthernet0/0
+      description: to control node
+      mode: access
+      vlan: 1
+    - name: GigabitEthernet0/1
+      description: to core01
+      mode: trunk
+    - name: GigabitEthernet0/2
+      description: to core02
+      mode: trunk
+    - name: GigabitEthernet0/3
+      description: 
+      mode: 
+    - name: GigabitEthernet1/0
+      description: 
+      mode: 
+    - name: GigabitEthernet1/1
+      description: 
+      mode: 
+    - name: GigabitEthernet1/2
+      description: 
+      mode: 
+    - name: GigabitEthernet1/3
+      description: 
+      mode: 
+ 
+  core01:
+    - name: GigabitEthernet0/0
+      description: to control node
+      mode: access
+    - name: GigabitEthernet0/1
+      description: to access01
+      mode: trunk
+    - name: GigabitEthernet0/2
+      description: to access02
+      mode: trunk
+    - name: GigabitEthernet0/3
+      description: to core02
+      mode: trunk
+    - name: GigabitEthernet1/0
+      description: 
+      mode: 
+    - name: GigabitEthernet1/1
+      description: 
+      mode: 
+    - name: GigabitEthernet1/2
+      description: 
+      mode: 
+    - name: GigabitEthernet1/3
+      description: 
+      mode: 
+
+  access02:
+    - name: GigabitEthernet0/0
+      description: to control node
+      mode: access
+      vlan: 1
+    - name: GigabitEthernet0/1
+      description: to access01
+      mode: trunk
+    - name: GigabitEthernet0/2
+      description: to access02
+      mode: trunk
+    - name: GigabitEthernet0/3
+      description: to core01
+      mode: trunk
+    - name: GigabitEthernet1/0
+      description: 
+      mode: 
+    - name: GigabitEthernet1/1
+      description: 
+      mode: 
+    - name: GigabitEthernet1/2
+      description: 
+      mode: 
+    - name: GigabitEthernet1/3
+      description: 
+      mode: 
