@@ -1,0 +1,11 @@
+[access]
+access01 ansible_host=10.1.106.7
+access02 ansible_host=10.1.106.8
+
+[core]
+core01 ansible_host=10.1.106.9
+core02 ansible_host=10.1.106.10
+
+[lan:children]
+access
+core
