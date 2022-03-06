@@ -1,5 +1,6 @@
 ---
 - name: Show ver & run playbook
+  
   hosts: lan
   vars_files: "./group_vars/network.yml"
   tasks:
@@ -10,7 +11,7 @@
           - show version 
       register: switches_ver_config
 
-    - name: save config to file
+    - name: save show running-config to files
       copy:
         content: |
           {% for host in groups.lan %}
@@ -22,7 +23,7 @@
         
         dest: "showrun.json.txt"
 
-    - name: save versions to file
+    - name: save show version to file
       copy:
         content: |
           {% for host in groups.lan %}

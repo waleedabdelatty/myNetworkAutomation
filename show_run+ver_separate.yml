@@ -1,0 +1,23 @@
+---
+- name: Show ver & run playbook 2
+  hosts: lan
+  vars_files: "./group_vars/network.yml"
+  tasks:
+    - name: running command show ver & show run
+      ios_command:
+        commands:
+          - show running-config 
+          - show version 
+      register: switches_ver_config
+
+    - name: save show running-config to files
+      copy:
+        content: "{{ switches_ver_config.stdout[0] }}"
+        dest: "{{ inventory_hostname }}_rconfig.json"
+
+    - name: save show version to files
+      copy:
+        content: "{{ switches_ver_config.stdout[1] }}"
+        dest: "{{ inventory_hostname }}_show_ver.json"
+
+...

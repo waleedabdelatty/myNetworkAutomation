@@ -1,0 +1,17 @@
+---
+- name: "configure lan"
+  hosts: lan
+  vars_files:
+    - "./group_vars/network.yml"
+    - "./group_vars/lan.yml"
+  tasks:
+    - name: "Configure Interfaces"
+      ios_interface:
+        name: "{{ item.name }}"
+        description: "{{ item.description }}"
+        duplex: "{{ intf_duplex }}"
+        mtu: "{{ intf_mtu }}"
+        state: up
+      loop: "{{ interfaces[inventory_hostname] }}"
+      register: ios_intf
+

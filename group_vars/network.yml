@@ -6,6 +6,5 @@ ansible_become: yes
 ansible_become_password: admin123
 ansible_become_method: enable
 
-name_servers: 10.1.106.1
-ntp_server: 10.1.106.1
-domain_name: ansible.com
+intf_duplex: full
+intf_mtu: 1500
