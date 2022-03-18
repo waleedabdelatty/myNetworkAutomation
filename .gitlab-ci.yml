@@ -1,0 +1,8 @@
+---
+ - stages: 
+     - deploy
+
+   deploy:
+       - before script: git clone git@gitlab.b2b.ole-lab.com:waleed/b2b-network-automation.git
+       - cd b2b-network-automation/
+       - bash ./ansible.sh
