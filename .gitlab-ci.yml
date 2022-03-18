@@ -1,4 +1,3 @@
-
 before_script:
   - git clone git@gitlab.b2b.ole-lab.com:waleed/b2b-network-automation.git
   - cd b2b-network-automation/
@@ -7,7 +6,7 @@ after_script:
   - echo "For example you might do some cleanup here"
 
 testrun:
-  stage: build
+  stage: deploy
   script:
     - bash ./ansible.sh
 
