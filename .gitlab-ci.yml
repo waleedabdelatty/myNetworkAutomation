@@ -1,9 +1,14 @@
----
- - stages: 
-     - deploy
-   deploy:
-      before script: 
-        - git clone git@gitlab.b2b.ole-lab.com:waleed/b2b-network-automation.git
-        - cd b2b-network-automation/
-      script:
-        - bash ./ansible.sh
+
+
+before_script:
+  - git clone git@gitlab.b2b.ole-lab.com:waleed/b2b-network-automation.git
+  - cd b2b-network-automation/
+after_script:
+  - echo "After script section"
+  - echo "For example you might do some cleanup here"
+
+testrun:
+  stage: testrun
+  script:
+    - bash ./ansible.sh
+
