@@ -13,11 +13,11 @@
     - name: save show running-config to files
       copy:
         content: "{{ switches_ver_config.stdout[0] }}"
-        dest: "{{ inventory_hostname }}_rconfig.json"
+        dest: "retrived/{{ inventory_hostname }}_rconfig.json"
 
     - name: save show version to files
       copy:
         content: "{{ switches_ver_config.stdout[1] }}"
-        dest: "{{ inventory_hostname }}_show_ver.json"
+        dest: "retrived/{{ inventory_hostname }}_show_ver.json"
 
 ...
