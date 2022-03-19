@@ -4,10 +4,10 @@ interfaces:
       description: 10.1.106.0/28
       mode: access
     - name: GigabitEthernet0/1
-      description: core01
+      description: core01_G0/1
       mode: trunk
     - name: GigabitEthernet0/2
-      description: core02
+      description: core02_G0/1
       mode: 
     - name: GigabitEthernet0/3
       description: 
@@ -30,12 +30,11 @@ interfaces:
     - name: GigabitEthernet0/0
       description: 10.1.106.0/28
       mode: access
-      vlan: 1
     - name: GigabitEthernet0/1
-      description: core01
+      description: core01_G0/2
       mode: trunk
     - name: GigabitEthernet0/2
-      description: core02
+      description: core02_G0/2
       mode: trunk
     - name: GigabitEthernet0/3
       description: 

@@ -1,0 +1,11 @@
+---
+- name: List all hosts 
+  hosts: lan
+  vars_files: "./group_vars/network.yml"
+  tasks: 
+    - name: Test hosts list
+      debug:
+        msg: |
+          {% for host in groups['lan'] %}
+            {{ hostvars[host]['ansible_host'] }}
+          {% endfor %}

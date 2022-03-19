@@ -1,0 +1,8 @@
+---
+- name: List all hosts 
+  hosts: lan
+  vars_files: "./group_vars/network.yml"
+  tasks: 
+    - name: Test hosts list
+      debug:
+        msg: "{{ansible_host}}"

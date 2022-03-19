@@ -1,0 +1,8 @@
+---
+- name: fact1
+  hosts: hosts
+  host_vars: "group_vars/network.yml"
+  tasks:
+    - name: Gather all legacy facts
+      cisco.ios.ios_facts:
+      gather_subset: all

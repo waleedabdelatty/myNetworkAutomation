@@ -1,0 +1,8 @@
+---
+ - name: collecting facts
+   hosts: all
+   tasks:
+     - name: task collect facts1
+       ios_facts:
+         gather_subset: all  
+       register: topology_facts   
