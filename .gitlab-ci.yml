@@ -1,0 +1,14 @@
+stages:
+  - build
+  - run
+
+build:
+  stage: build
+  script: 
+    - cd /home/gitlab-runner/b2b-network-automation
+    - chmod +x ansible.sh
+
+run:
+  stage: run
+  script:
+    - bash ./ansible.sh
